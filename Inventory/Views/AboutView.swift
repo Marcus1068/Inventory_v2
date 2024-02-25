@@ -22,6 +22,7 @@ limitations under the License.
 //  Created by Marcus Deuß on 23.02.24.
 //
 
+
 import SwiftUI
 
 struct AboutView: View {
