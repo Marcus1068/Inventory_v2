@@ -30,7 +30,15 @@ struct InventoryView: View {
         List {
             ForEach(inventory) { inv in
                 NavigationLink(value: inv) {
-                    Text(inv.name)
+                    VStack{
+                        Text(inv.name)
+                        if let imageData = inv.photo, let uiImage = UIImage(data: imageData) {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50)
+                        }
+                    }
                 }
             }
             .onDelete(perform: deleteInventory)
