@@ -27,14 +27,14 @@ import SwiftData
 struct Previewer {
     let container: ModelContainer
     let event: Event
-    let person: Person
+    let person: Inventory
 
     init() throws {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        container = try ModelContainer(for: Person.self, configurations: config)
+        container = try ModelContainer(for: Inventory.self, configurations: config)
 
         event = Event(name: "Event 1", location: "Hamburg")
-        person = Person(name: "Peter Parker", emailAddress: "peter@parker.com", details: "", metAt: event)
+        person = Inventory(name: "Peter Parker", emailAddress: "peter@parker.com", details: "", metAt: event)
 
         container.mainContext.insert(person)
     }

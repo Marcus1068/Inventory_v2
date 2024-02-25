@@ -8,7 +8,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Person {
+class Inventory {
     var name: String = ""
     var emailAddress: String = ""
     var details: String = ""

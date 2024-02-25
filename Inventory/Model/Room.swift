@@ -13,7 +13,7 @@ class Room{
     var name: String
     var symbol: String
     
-    var people: [Person]? = [Person]()
+    var people: [Inventory]? = [Inventory]()
     
     init(name: String, symbol: String) {
         self.name = name

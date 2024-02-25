@@ -32,6 +32,6 @@ struct InventoryApp: App {
         WindowGroup {
             MainView()
         }
-        .modelContainer(for: Person.self)
+        .modelContainer(for: Inventory.self)
     }
 }

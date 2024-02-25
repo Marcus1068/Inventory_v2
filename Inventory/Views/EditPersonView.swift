@@ -26,7 +26,7 @@ import SwiftUI
 
 struct EditPersonView: View {
     @Environment(\.modelContext) var modelContext
-    @Bindable var person: Person
+    @Bindable var person: Inventory
     @Binding var navigationPath: NavigationPath
     @State private var selectedItem: PhotosPickerItem?
     @State private var selectedItem2: PhotosPickerItem?
@@ -46,7 +46,7 @@ struct EditPersonView: View {
             Spacer()
             
             Form {
-                Section("Photo of person") {
+                Section("Photo of inventory") {
                     if let imageData = person.photo, let uiImage = UIImage(data: imageData) {
                         Image(uiImage: uiImage)
                             .resizable()

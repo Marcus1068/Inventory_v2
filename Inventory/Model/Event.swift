@@ -13,7 +13,7 @@ class Event {
     var location: String = ""
     
     //relations
-    var people: [Person]? = [Person]()
+    var people: [Inventory]? = [Inventory]()
 
     init(name: String, location: String) {
         self.name = name

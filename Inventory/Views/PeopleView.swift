@@ -25,7 +25,7 @@ import SwiftUI
 
 struct PeopleView: View {
     @Environment(\.modelContext) var modelContext
-    @Query var people: [Person]
+    @Query var people: [Inventory]
 
     var body: some View {
         List {
@@ -38,7 +38,7 @@ struct PeopleView: View {
         }
     }
 
-    init(searchString: String = "", sortOrder: [SortDescriptor<Person>] = []) {
+    init(searchString: String = "", sortOrder: [SortDescriptor<Inventory>] = []) {
         _people = Query(filter: #Predicate { person in
             if searchString.isEmpty {
                 true
