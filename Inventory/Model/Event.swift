@@ -8,12 +8,12 @@ import Foundation
 import SwiftData
 
 @Model
-class Event {
+class Event{
     var name: String = ""
     var location: String = ""
     
     //relations
-    var people: [Inventory]? = [Inventory]()
+    var inventory: [Inventory]? = [Inventory]()
 
     init(name: String, location: String) {
         self.name = name

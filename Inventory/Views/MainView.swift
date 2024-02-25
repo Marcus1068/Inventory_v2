@@ -27,9 +27,9 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            ContentView()
+            InventoryListView()
                 .tabItem {
-                    Label("First", systemImage: "list.dash")
+                    Label("Inventory", systemImage: "list.dash")
                 }
 
             EventView()

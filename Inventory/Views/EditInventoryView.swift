@@ -16,17 +16,16 @@ limitations under the License.
 
 */
 
-//
-//  EditPersonView.swift
+//  EditInventoryView.swift
 
 
 import PhotosUI
 import SwiftData
 import SwiftUI
 
-struct EditPersonView: View {
+struct EditInventoryView: View {
     @Environment(\.modelContext) var modelContext
-    @Bindable var person: Inventory
+    @Bindable var inventory: Inventory
     @Binding var navigationPath: NavigationPath
     @State private var selectedItem: PhotosPickerItem?
     @State private var selectedItem2: PhotosPickerItem?
@@ -47,7 +46,7 @@ struct EditPersonView: View {
             
             Form {
                 Section("Photo of inventory") {
-                    if let imageData = person.photo, let uiImage = UIImage(data: imageData) {
+                    if let imageData = inventory.photo, let uiImage = UIImage(data: imageData) {
                         Image(uiImage: uiImage)
                             .resizable()
                             .scaledToFit()
@@ -58,11 +57,10 @@ struct EditPersonView: View {
                         Label("Select a photo", systemImage: "person")
                     }
                     
-                        
                 }
                 
                 Section("2nd photo"){
-                    if let imageData2 = person.photo2, let uiImage2 = UIImage(data: imageData2) {
+                    if let imageData2 = inventory.photo2, let uiImage2 = UIImage(data: imageData2) {
                         Image(uiImage: uiImage2)
                             .resizable()
                             .scaledToFit()
@@ -75,17 +73,17 @@ struct EditPersonView: View {
                 }
 
                 Section("Details") {
-                    TextField("Name", text: $person.name)
+                    TextField("Name", text: $inventory.name)
                         .textContentType(.name)
 
-                    TextField("Email address", text: $person.emailAddress)
+                    TextField("Email address", text: $inventory.emailAddress)
                         .textContentType(.emailAddress)
                         .textInputAutocapitalization(.never)
                 }
                 //.foregroundColor(.red)
 
                 Section("Where did you meet them?") {
-                    Picker("Met at", selection: $person.metAt) {
+                    Picker("Met at", selection: $inventory.metAt) {
                         Text("Unknown event")
                             .tag(Optional<Event>.none)
 
@@ -103,14 +101,14 @@ struct EditPersonView: View {
                 }
 
                 Section("Notes") {
-                    TextField("Details about this person", text: $person.details, axis: .vertical)
+                    TextField("Inventory details", text: $inventory.details, axis: .vertical)
                 }
             }
             //.foregroundColor(.brown)
             .tint(.blue)
             .background(Color.secondary)
             .scrollContentBackground(.hidden)
-            .navigationTitle("Edit Person")
+            .navigationTitle("Edit Inventory")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: Event.self) { event in
                 EditEventView(event: event)
@@ -129,13 +127,13 @@ struct EditPersonView: View {
 
     func loadPhoto() {
         Task { @MainActor in
-            person.photo = try await selectedItem?.loadTransferable(type: Data.self)
+            inventory.photo = try await selectedItem?.loadTransferable(type: Data.self)
         }
     }
     
     func loadPhoto2() {
         Task { @MainActor in
-            person.photo2 = try await selectedItem2?.loadTransferable(type: Data.self)
+            inventory.photo2 = try await selectedItem2?.loadTransferable(type: Data.self)
         }
     }
 }
@@ -144,7 +142,7 @@ struct EditPersonView: View {
     do {
         let previewer = try Previewer()
 
-        return EditPersonView(person: previewer.person, navigationPath: .constant(NavigationPath()))
+        return EditInventoryView(inventory: previewer.inventory, navigationPath: .constant(NavigationPath()))
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

@@ -1,6 +1,5 @@
 //
 //  Room.swift
-//  Inventory
 //
 //  Created by Marcus Deuß on 25.02.24.
 //
@@ -10,10 +9,12 @@ import SwiftData
 
 @Model
 class Room{
-    var name: String
-    var symbol: String
+    // room name
+    var name: String = ""
+    // sf symbol name of a room symbol like "sofa" or "bed.double"
+    var symbol: String = ""
     
-    var people: [Inventory]? = [Inventory]()
+    var inventory: [Inventory]? = [Inventory]()
     
     init(name: String, symbol: String) {
         self.name = name

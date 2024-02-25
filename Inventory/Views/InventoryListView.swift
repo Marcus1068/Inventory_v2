@@ -19,7 +19,7 @@ limitations under the License.
 import SwiftData
 import SwiftUI
 
-struct ContentView: View {
+struct InventoryListView: View {
     @Environment(\.modelContext) var modelContext
     @State private var path = NavigationPath()
 
@@ -28,10 +28,10 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack(path: $path) {
-            PeopleView(searchString: searchText, sortOrder: sortOrder)
+            InventoryView(searchString: searchText, sortOrder: sortOrder)
                 .navigationTitle("Inventory App")
-                .navigationDestination(for: Inventory.self) { person in
-                    EditPersonView(person: person, navigationPath: $path)
+                .navigationDestination(for: Inventory.self) { inv in
+                    EditInventoryView(inventory: inv, navigationPath: $path)
                 }
                 .toolbar {
                     Menu("Sort", systemImage: "arrow.up.arrow.down") {
@@ -44,16 +44,16 @@ struct ContentView: View {
                         }
                     }
 
-                    Button("Add inventory", systemImage: "plus", action: addPerson)
+                    Button("Add inventory", systemImage: "plus", action: addInventory)
                 }
                 .searchable(text: $searchText)
         }
     }
 
-    func addPerson() {
-        let person = Inventory(name: "", emailAddress: "", details: "")
-        modelContext.insert(person)
-        path.append(person)
+    func addInventory() {
+        let inv = Inventory(name: "", emailAddress: "", details: "")
+        modelContext.insert(inv)
+        path.append(inv)
     }
 }
 
@@ -61,7 +61,7 @@ struct ContentView: View {
     do {
         let previewer = try Previewer()
 
-        return ContentView()
+        return InventoryListView()
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

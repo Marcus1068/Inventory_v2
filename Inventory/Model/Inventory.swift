@@ -1,5 +1,5 @@
 //
-//  Person.swift
+//  Inventory.swift
 //
 //  Created by Marcus Deuß on 25/02/2024.
 //

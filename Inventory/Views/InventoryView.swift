@@ -16,43 +16,42 @@ limitations under the License.
 
 */
 
-//
-//  PeopleView.swift
+//  InventoryView.swift
 
 
 import SwiftData
 import SwiftUI
 
-struct PeopleView: View {
+struct InventoryView: View {
     @Environment(\.modelContext) var modelContext
-    @Query var people: [Inventory]
+    @Query var inventory: [Inventory]
 
     var body: some View {
         List {
-            ForEach(people) { person in
-                NavigationLink(value: person) {
-                    Text(person.name)
+            ForEach(inventory) { inv in
+                NavigationLink(value: inv) {
+                    Text(inv.name)
                 }
             }
-            .onDelete(perform: deletePeople)
+            .onDelete(perform: deleteInventory)
         }
     }
 
     init(searchString: String = "", sortOrder: [SortDescriptor<Inventory>] = []) {
-        _people = Query(filter: #Predicate { person in
+        _inventory = Query(filter: #Predicate { inv in
             if searchString.isEmpty {
                 true
             } else {
-                person.name.localizedStandardContains(searchString)
-                || person.emailAddress.localizedStandardContains(searchString)
-                || person.details.localizedStandardContains(searchString)
+                inv.name.localizedStandardContains(searchString)
+                || inv.emailAddress.localizedStandardContains(searchString)
+                || inv.details.localizedStandardContains(searchString)
             }
         }, sort: sortOrder)
     }
 
-    func deletePeople(at offsets: IndexSet) {
+    func deleteInventory(at offsets: IndexSet) {
         for offset in offsets {
-            let person = people[offset]
+            let person = inventory[offset]
             modelContext.delete(person)
         }
     }
@@ -62,7 +61,7 @@ struct PeopleView: View {
     do {
         let previewer = try Previewer()
 
-        return PeopleView()
+        return InventoryView()
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
