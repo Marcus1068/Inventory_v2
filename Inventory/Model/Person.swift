@@ -1,8 +1,7 @@
 //
 //  Person.swift
-//  FaceFacts
 //
-//  Created by Paul Hudson on 22/12/2023.
+//  Created by Marcus Deuß on 25/02/2024.
 //
 
 import Foundation

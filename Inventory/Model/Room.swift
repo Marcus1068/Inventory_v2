@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import SwiftData
+
+@Model
+class Room{
+    var name: String
+    var symbol: String
+    
+    var people: [Person]? = [Person]()
+    
+    init(name: String, symbol: String) {
+        self.name = name
+        self.symbol = symbol
+    }
+}

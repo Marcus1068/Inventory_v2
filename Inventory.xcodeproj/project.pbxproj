@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CC3AC5A2B8BC145003A773A /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3AC592B8BC145003A773A /* Room.swift */; };
 		2CFFFE8D2B8BAF5D00C62656 /* InventoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFFE8C2B8BAF5D00C62656 /* InventoryApp.swift */; };
 		2CFFFE912B8BAF5E00C62656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CFFFE902B8BAF5E00C62656 /* Assets.xcassets */; };
 		2CFFFE942B8BAF5E00C62656 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CFFFE932B8BAF5E00C62656 /* Preview Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		2CC3AC572B8BBB58003A773A /* Inventory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Inventory.entitlements; sourceTree = "<group>"; };
 		2CC3AC582B8BBBD0003A773A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CC3AC592B8BC145003A773A /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Room.swift; path = Inventory/Model/Room.swift; sourceTree = SOURCE_ROOT; };
 		2CFFFE892B8BAF5D00C62656 /* Inventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CFFFE8C2B8BAF5D00C62656 /* InventoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryApp.swift; sourceTree = "<group>"; };
 		2CFFFE902B8BAF5E00C62656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		2CFFFE9A2B8BB35500C62656 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CC3AC592B8BC145003A773A /* Room.swift */,
 				2CFFFE9C2B8BB37100C62656 /* Event.swift */,
 				2CFFFE9D2B8BB37100C62656 /* Person.swift */,
 			);
@@ -186,6 +189,7 @@
 			files = (
 				2CFFFEAB2B8BB37F00C62656 /* EditPersonView.swift in Sources */,
 				2CFFFEAF2B8BB37F00C62656 /* ContentView.swift in Sources */,
+				2CC3AC5A2B8BC145003A773A /* Room.swift in Sources */,
 				2CFFFEAE2B8BB37F00C62656 /* PeopleView.swift in Sources */,
 				2CFFFE9F2B8BB37100C62656 /* Person.swift in Sources */,
 				2CFFFEA82B8BB37F00C62656 /* EditEventView.swift in Sources */,
