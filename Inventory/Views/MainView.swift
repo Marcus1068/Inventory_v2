@@ -32,7 +32,7 @@ struct MainView: View {
                     Label("Inventory", systemImage: "list.dash")
                 }
 
-            EventView()
+            EventListView()
                 .tabItem {
                     Label("Events", systemImage: "light.cylindrical.ceiling.inverse")
                 }
