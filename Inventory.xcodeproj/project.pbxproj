@@ -17,7 +17,7 @@
 		2CFFFEA92B8BB37F00C62656 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFFEA12B8BB37F00C62656 /* MainView.swift */; };
 		2CFFFEAA2B8BB37F00C62656 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFFEA22B8BB37F00C62656 /* Previewer.swift */; };
 		2CFFFEAB2B8BB37F00C62656 /* EditInventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFFEA32B8BB37F00C62656 /* EditInventoryView.swift */; };
-		2CFFFEAC2B8BB37F00C62656 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFFEA42B8BB37F00C62656 /* EventView.swift */; };
+		2CFFFEAC2B8BB37F00C62656 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFFEA42B8BB37F00C62656 /* EventListView.swift */; };
 		2CFFFEAD2B8BB37F00C62656 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFFEA52B8BB37F00C62656 /* AboutView.swift */; };
 		2CFFFEAE2B8BB37F00C62656 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFFEA62B8BB37F00C62656 /* InventoryView.swift */; };
 		2CFFFEAF2B8BB37F00C62656 /* InventoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFFFEA72B8BB37F00C62656 /* InventoryListView.swift */; };
@@ -37,7 +37,7 @@
 		2CFFFEA12B8BB37F00C62656 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2CFFFEA22B8BB37F00C62656 /* Previewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 		2CFFFEA32B8BB37F00C62656 /* EditInventoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInventoryView.swift; sourceTree = "<group>"; };
-		2CFFFEA42B8BB37F00C62656 /* EventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		2CFFFEA42B8BB37F00C62656 /* EventListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		2CFFFEA52B8BB37F00C62656 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		2CFFFEA62B8BB37F00C62656 /* InventoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
 		2CFFFEA72B8BB37F00C62656 /* InventoryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryListView.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 				2CFFFEA72B8BB37F00C62656 /* InventoryListView.swift */,
 				2CFFFEA02B8BB37F00C62656 /* EditEventView.swift */,
 				2CFFFEA32B8BB37F00C62656 /* EditInventoryView.swift */,
-				2CFFFEA42B8BB37F00C62656 /* EventView.swift */,
+				2CFFFEA42B8BB37F00C62656 /* EventListView.swift */,
 				2CFFFEA12B8BB37F00C62656 /* MainView.swift */,
 				2CFFFEA62B8BB37F00C62656 /* InventoryView.swift */,
 				2CFFFEA22B8BB37F00C62656 /* Previewer.swift */,
@@ -198,7 +198,7 @@
 				2CFFFEAA2B8BB37F00C62656 /* Previewer.swift in Sources */,
 				2CFFFEA92B8BB37F00C62656 /* MainView.swift in Sources */,
 				2CFFFE8D2B8BAF5D00C62656 /* InventoryApp.swift in Sources */,
-				2CFFFEAC2B8BB37F00C62656 /* EventView.swift in Sources */,
+				2CFFFEAC2B8BB37F00C62656 /* EventListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

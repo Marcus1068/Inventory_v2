@@ -17,7 +17,7 @@ limitations under the License.
 */
 
 //
-//  EventView.swift
+//  EventListView.swift
 
 //  Created by Marcus Deuß on 25.02.24.
 //
@@ -25,25 +25,27 @@ limitations under the License.
 import SwiftUI
 import SwiftData
 
-struct EventView: View {
+struct EventListView: View {
     @Environment(\.modelContext) var modelContext
     @State private var path = NavigationPath()
     @Query var events: [Event]
     
     var body: some View {
-        //NavigationStack(path: $path) {
-            List {
-                ForEach(events) { event in
-                    NavigationLink(value: event) {
-                        Text(event.name)
-                    }
+        NavigationStack(path: $path) {
+            List{
+                ForEach(events, id: \.self) { event in
+                    NavigationLink(event.name, value: event)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    Text(event.location)
+                        .font(.subheadline)
                 }
                 .onDelete(perform: deleteEvent)
             }
-            //.navigationTitle("Edit Events")
-            //.navigationBarTitleDisplayMode(.inline)
-        //}
-        //.navigationTitle("Edit Events")
+            .navigationDestination(for: Event.self) { event in
+                EditEventView(event: event)
+            }
+            .navigationTitle("Select an event")
+        }
     }
     
     func deleteEvent(at offsets: IndexSet) {
@@ -58,7 +60,7 @@ struct EventView: View {
     do {
         let previewer = try Previewer()
 
-        return EventView()
+        return EventListView()
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
