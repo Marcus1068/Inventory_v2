@@ -32,17 +32,19 @@ struct EventListView: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-            List(events, id: \.self) { event in
-                NavigationLink(event.name, value: event)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text(event.location)
-                    .font(.subheadline)
+            List{
+                ForEach(events, id: \.self) { event in
+                    NavigationLink(event.name, value: event)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    Text(event.location)
+                        .font(.subheadline)
+                }
+                .onDelete(perform: deleteEvent)
             }
             .navigationDestination(for: Event.self) { event in
                 EditEventView(event: event)
             }
             .navigationTitle("Select an event")
-                
         }
     }
     
