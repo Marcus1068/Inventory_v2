@@ -27,8 +27,10 @@ import SwiftData
 struct Previewer {
     let container: ModelContainer
     let event: Event
+    let event2: Event
     //let room: Room
     let inventory: Inventory
+    let inventory2: Inventory
 
     init() throws {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
@@ -36,8 +38,11 @@ struct Previewer {
 
         //room = Room(name: "Living Room", symbol: "sofa")
         event = Event(name: "Event 1", location: "Hamburg")
-        inventory = Inventory(name: "Peter Parker", emailAddress: "peter@parker.com", details: "", metAt: event)
+        inventory = Inventory(name: "Steve Rogers", emailAddress: "steve@parker.com", details: "", metAt: event)
+        event2 = Event(name: "Event 2", location: "Berlin")
+        inventory2 = Inventory(name: "Peter Parker", emailAddress: "peter@parker.com", details: "", metAt: event2)
 
         container.mainContext.insert(inventory)
+        container.mainContext.insert(inventory2)
     }
 }
